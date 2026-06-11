@@ -29,8 +29,14 @@ $dischiArray = json_decode($dischi, true);
 
         <nav class="navbar bg-black p-3 text-light">
             <div class="container-fluid">
-                <a class="nav-link" href="index.php">I MIEI DISCHI</a>
-                <a class="nav-link" href="index.php">Aggiungi disco</a>
+                <a class="navbar-brand" style="width: 30px;" href="index.php">
+                    <img 
+                    class="img-fluid"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/3840px-Apple_Music_icon.svg.png" 
+                    alt="Apple Music logo"
+                    >
+                </a>
+                <a class="nav-link" href="addCd.php">Aggiungi disco</a>
             </div>
         </nav>
         
