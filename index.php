@@ -26,50 +26,55 @@ $dischiArray = json_decode($dischi, true);
 
     <!-- Header -->
     <header>
-        <nav class="navbar bg-body-tertiary p-3">
+
+        <nav class="navbar bg-black p-3 text-light">
             <div class="container-fluid">
                 <a class="nav-link" href="index.php">I MIEI DISCHI</a>
+                <a class="nav-link" href="index.php">Aggiungi disco</a>
             </div>
         </nav>
+        
+    </header>
 
         <!-- Main -->
-        <main class="container">
+        <main class="bg-dark">
+            <div class="container">
 
-            <!-- Card Section -->
-            <section class="row gy-3 p-3">
+                <!-- Card Section -->
+                <section class="row gy-3 p-3">
 
-                <?php foreach ($dischiArray as $disco) : ?>
+                    <?php foreach ($dischiArray as $disco) : ?>
 
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card">
 
-                            <div class="w-50 align-self-center p-3">
-                                <img src=<?php echo $disco["url_cover"] ?> class="img-fluid" alt="">
+                                <div class="w-50 align-self-center p-3">
+                                    <img src=<?php echo $disco["url_cover"] ?> class="img-fluid" alt="">
+                                </div>
+
+                                <div class="card-body fs-6">
+                                    <h5 class="card-title"><?php echo $disco["titolo"] . '.' ?></h5>
+                                    <p class="card-text">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><?php echo $disco["artista"] ?></li>
+                                        <li class="list-group-item"><?php echo $disco["anno_di_pubblicazione"]  ?></li>
+                                        <li class="list-group-item"><?php echo $disco["titolo"] ?></li>
+                                    </ul>
+                                    </p>
+                                </div>
+
                             </div>
-
-                            <div class="card-body fs-6">
-                                <h5 class="card-title"><?php echo $disco["titolo"] ?></h5>
-                                <p class="card-text">
-                                <ul>
-                                    <li><?php echo $disco["artista"] ?></li>
-                                    <li><?php echo $disco["anno_di_pubblicazione"] ?></li>
-                                    <li><?php echo $disco["titolo"] ?></li>
-                                </ul>
-                                </p>
-                            </div>
-
                         </div>
-                    </div>
 
-                <?php endforeach ?>
+                    <?php endforeach ?>
 
 
-            </section>
+                </section>
 
+            </div>
         </main>
 
-        <!-- titolo, artista, url della cover, anno di pubblicazione, genere -->
-    </header>
+        
 </body>
 
 </html>
