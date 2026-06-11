@@ -1,5 +1,7 @@
 <?php 
+
 $dischi = file_get_contents('dischi.json');
+
 $dischiArray = json_decode($dischi, true);
 
 

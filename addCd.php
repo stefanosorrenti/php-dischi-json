@@ -44,7 +44,7 @@
                         <div class="card-body fs-6">
                             <form action="server.php" method="POST">
 
-                                <label for="titolo" class="form-label">Titolo brano</label>
+                                <label for="titolo" class="form-label">Titolo album</label>
                                 <input type="text" class="form-control" name="titolo" id="titolo" placeholder="Drake...">
 
                                 <label for="artista" class="form-label">Nome Artista</label>
