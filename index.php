@@ -1,3 +1,16 @@
+<?php
+$dischi = file_get_contents('dischi.json');
+$dischiArray = json_decode($dischi, true);
+/* foreach ($dischiArray as $di) {
+
+    foreach ($di as $d) {
+        echo $d  . '<br>';
+    };
+};
+ */
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,26 +37,32 @@
 
             <!-- Card Section -->
             <section class="row gy-3">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card">
 
-                        <img src="" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Titolo disco</h5>
-                            <p class="card-text">
-                            <ul>
-                                <li>Artista</li>
-                                <li>Anno</li>
-                                <li>Genere</li>
-                            </ul>
-                            </p>
+                <?php foreach ($dischiArray as $disco) : ?>
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            
+                            <img src=<?php echo $disco["url_cover"] ?> class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $disco["titolo"] ?></h5>
+                                <p class="card-text">
+                                <ul>
+                                    <li><?php echo $disco["artista"] ?></li>
+                                    <li><?php echo $disco["anno_di_pubblicazione"] ?></li>
+                                    <li><?php echo $disco["titolo"] ?></li>
+                                </ul>
+                                </p>
+                            </div>
+
                         </div>
-
                     </div>
-                </div>
-                </div>
+
+                <?php endforeach ?>
+
+
             </section>
-            </div>
+
         </main>
 
         <!-- titolo, artista, url della cover, anno di pubblicazione, genere -->
