@@ -36,15 +36,18 @@ $dischiArray = json_decode($dischi, true);
         <main class="container">
 
             <!-- Card Section -->
-            <section class="row gy-3">
+            <section class="row gy-3 p-3">
 
                 <?php foreach ($dischiArray as $disco) : ?>
-                    
+
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card">
-                            
-                            <img src=<?php echo $disco["url_cover"] ?> class="card-img-top" alt="">
-                            <div class="card-body">
+
+                            <div class="w-50 align-self-center p-3">
+                                <img src=<?php echo $disco["url_cover"] ?> class="img-fluid" alt="">
+                            </div>
+
+                            <div class="card-body fs-6">
                                 <h5 class="card-title"><?php echo $disco["titolo"] ?></h5>
                                 <p class="card-text">
                                 <ul>
